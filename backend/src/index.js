@@ -13,8 +13,8 @@ import job from "./lib/cron.js";
 import clerkWebhook from './webhooks/clerk.webhooks.js';
 import authRoutes from './routes/auth.route.js';
 import messageRoutes from "./routes/message.route.js";
+import {app, server} from './lib/socket.js';
 
-const app = express();
 const PORT = process.env.PORT;
 const FRONTEND_URL = process.env.FRONTEND_URL;
 
@@ -31,7 +31,7 @@ app.get("/health", (req, res) => {
 });
 
 app.use("/api/auth", authRoutes);
-app.use("/api/messages", messageRoutes);
+app.use("/api/messages", messageRoutes); 
 
 if(fs.existsSync(publicDir)){
   app.use(express.static(publicDir));
@@ -39,7 +39,7 @@ if(fs.existsSync(publicDir)){
     res.sendFile(path.join(publicDir, "index.html"), (err) => next(err));
   });
 }
-app.listen(PORT, () => 
+server.listen(PORT, () => 
   {
     connectDB();
     console.log("Server is up and running on port:" , PORT);
