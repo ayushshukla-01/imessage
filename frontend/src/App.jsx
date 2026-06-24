@@ -1,24 +1,21 @@
 import './App.css';
-import { Show, SignInButton, SignUpButton, UserButton } from '@clerk/react';
-
+import { WallpaperProvider } from './context/WallpaperContext';
+import { ThemeProvider } from './context/ThemeContext';
+import { Navigate, Route, Routes } from 'react-router';
+import ChatPage from './pages/ChatPage';
+import AuthPage from './pages/AuthPage';
+import { useAuth } from '@clerk/react';
 
 function App() {
- 
   return (
-    <div>
-      <h1>MY APP</h1>
-
-      <header>
-        <Show when="signed-out">
-          <SignInButton mode="modal"/>
-          <SignUpButton mode="modal"/>
-        </Show>
-        <Show when="signed-in">
-          <UserButton />
-        </Show>
-      </header>
-
-    </div>
+    <ThemeProvider>
+     <wallpaperProvider>
+       <Routes>
+         <Route path="/" element={<ChatPage />} />
+         <Route path="/auth" element={<AuthPage />} />
+       </Routes>
+      </wallpaperProvider>
+    </ThemeProvider>
   );
 }
 
