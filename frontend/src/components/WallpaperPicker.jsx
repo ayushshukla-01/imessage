@@ -43,7 +43,7 @@ function WallpaperThumb({ wallpaper, selected, onSelect }) {
   );
 }
 
-export default function WallpaperPicker() {
+export  function WallpaperPicker() {
   const modal = useOverlayState();
   const { wallpaperId, setWallpaperId } = useWallpaper();
   const [, startTransition] = useTransition();
