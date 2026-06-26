@@ -1,9 +1,9 @@
-import Imagekit, { toFile } from "imagekit/nodejs";
+import ImageKit, { toFile } from "@imagekit/nodejs";
 
-const imagekit = new Imagekit({privateKey: process.env.IMAGEKIT_PRIVATE_KEY});
+const imagekit = new ImageKit({ privateKey: process.env.IMAGEKIT_PRIVATE_KEY });
 
-function hasImagekitConfig() {
-    return Boolean(process.env.IMAGEKIT_PRIVATE_KEY);
+function hasImageKitConfig() {
+  return Boolean(process.env.IMAGEKIT_PRIVATE_KEY);
 }
 
 // originalName= "My Photo (1).png"
@@ -14,6 +14,10 @@ function createFileName(originalName = "upload") {
   return `chat-${Date.now()}-${safeName}`;
 }
 
+/**
+ * Upload image or video to ImageKit
+ * @see https://imagekit.io/docs/api-reference/upload-file/upload-file
+ */
 async function uploadChatMedia(file) {
   const fileName = createFileName(file.originalname);
 
@@ -27,4 +31,3 @@ async function uploadChatMedia(file) {
 }
 
 export { uploadChatMedia, hasImageKitConfig };
-
