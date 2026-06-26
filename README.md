@@ -137,7 +137,7 @@ VITE_API_URL=http://localhost:3000
 Clone the repository
 
 ```bash
-git clone https://github.com/yourusername/chat-app.git
+git clone[ https://github.com/yourusername/chat-app.git](https://github.com/ayushshukla-01/imessage)
 ```
 
 Navigate into the project
@@ -167,21 +167,7 @@ npm run dev
 
 ---
 
-# 🐳 Docker Deployment
 
-Build Docker image
-
-```bash
-docker build -t realtime-chat .
-```
-
-Run container
-
-```bash
-docker run -p 3000:3000 realtime-chat
-```
-
----
 
 # 🌟 Highlights
 
