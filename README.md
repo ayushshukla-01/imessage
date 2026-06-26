@@ -8,7 +8,6 @@ A modern full-stack real-time chat application built with **React**, **Node.js**
 
 ## 📸 Screenshots
 
-> Add screenshots of your application inside a `screenshots/` folder.
 
 ```text
 screenshots/
