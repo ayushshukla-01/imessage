@@ -15,7 +15,7 @@ screenshots/
 ├── login.png
 ├── home.png
 ├── chat.png
-├── profile.png
+├── auth.png
 └── settings.png
 ```
 
@@ -23,6 +23,7 @@ screenshots/
 ![Login](screenshots/login.png)
 ![Home](screenshots/home.png)
 ![Chat](screenshots/chat.png)
+![Auth](screenshots/auth.png)
 ```
 
 ---
