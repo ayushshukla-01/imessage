@@ -1,50 +1,88 @@
 # 💬 Full Stack Real-Time Chat Application
 
-A modern full-stack real-time chat application built with **React**, **Node.js**, **Express.js**, **MongoDB**, **Socket.IO**, and **Clerk Authentication**. The application supports instant messaging, media sharing, online user tracking, customizable themes, and responsive UI, providing a smooth real-time communication experience.
+<p align="center">
+  <img src="https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Node.js-Express-339933?logo=node.js&logoColor=white"/>
+  <img src="https://img.shields.io/badge/MongoDB-47A248?logo=mongodb&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Socket.IO-Realtime-010101?logo=socket.io"/>
+  <img src="https://img.shields.io/badge/Clerk-Authentication-6C47FF"/>
+  <img src="https://img.shields.io/badge/Docker-2496ED?logo=docker&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Render-Deployed-46E3B7"/>
+  <img src="https://img.shields.io/badge/License-MIT-yellow"/>
+</p>
 
-## 🚀 Live Demo
+A modern **Full Stack Real-Time Chat Application** built with **React, Node.js, Express.js, MongoDB, Socket.IO, Clerk Authentication, and Docker**.
 
-🌐 **Live Application:** [https://your-render-url.onrender.com](https://echatapp-w5xf.onrender.com/)
+Supports real-time messaging, media sharing, authentication, customizable themes, online user tracking, and responsive design.
 
-## 📸 Screenshots
+---
 
+# 🚀 Live Demo
 
-```text
-screenshots/
-├── login.png
-├── home.png
-├── chat.png
-├── auth.png
-└── settings.png
-```
+🌐 **Live App:** [https://your-render-url.onrender.com](https://echatapp-w5xf.onrender.com/)
+
+---
+
+# 🎥 Demo
+
+> Add a GIF here showing:
+>
+> Login → Select User → Send Message → Receive Message → Change Theme
+
+Example:
 
 ```md
-![Login](screenshots/login.png)
-![Home](screenshots/home.png)
-![Chat](screenshots/chat.png)
-![Auth](screenshots/auth.png)
+![Demo](screenshots/demo.gif)
 ```
+
+---
+
+# 📸 Screenshots
+
+<table>
+<tr>
+<td align="center">
+<b>🔐 Login</b><br><br>
+<img src="screenshots/login.png" width="450">
+</td>
+
+<td align="center">
+<b>🏠 Home</b><br><br>
+<img src="screenshots/home.png" width="450">
+</td>
+</tr>
+
+<tr>
+<td align="center">
+<b>💬 Chat</b><br><br>
+<img src="screenshots/chat.png" width="450">
+</td>
+
+<td align="center">
+<b>🔑 Authentication</b><br><br>
+<img src="screenshots/auth.png" width="450">
+</td>
+</tr>
+</table>
 
 ---
 
 # ✨ Features
 
-* 🔐 Secure Authentication using Clerk
-* 💬 Real-Time One-to-One Messaging
-* ⚡ Instant Message Delivery with Socket.IO
-* 🟢 Online User Presence
-* 📷 Image Sharing
-* 🎥 Video Sharing
-* 🎨 Light & Dark Mode
-* 🌈 Multiple UI Themes
-* 🖼️ Custom Chat Wallpapers
-* 🔊 Optional Keyboard Sound Effects
-* 📁 Media Upload & Optimization using ImageKit
-* 🔄 Persistent Chat History
-* 📱 Fully Responsive Design
-* 🛡️ Protected Backend APIs
-* ☁️ Dockerized Deployment
-* 🚀 Production Ready
+- 🔐 Secure Authentication using Clerk
+- 💬 Real-Time Messaging
+- ⚡ Socket.IO Integration
+- 🟢 Online User Presence
+- 📷 Image Sharing
+- 🎥 Video Sharing
+- 🎨 Light & Dark Mode
+- 🌈 Multiple Themes
+- 🖼️ Custom Wallpapers
+- 📁 Media Upload with ImageKit
+- 🔄 Persistent Chat History
+- 📱 Responsive Design
+- ☁️ Docker Deployment
+- 🚀 Production Ready
 
 ---
 
@@ -52,49 +90,71 @@ screenshots/
 
 ## Frontend
 
-* React.js
-* Tailwind CSS
-* Hero UI
-* Zustand
-* Axios
-* Socket.IO Client
+- React.js
+- Tailwind CSS
+- Hero UI
+- Zustand
+- Axios
+- Socket.IO Client
 
 ## Backend
 
-* Node.js
-* Express.js
-* MongoDB
-* Mongoose
-* Socket.IO
-* Clerk Authentication
-* ImageKit
+- Node.js
+- Express.js
+- MongoDB
+- Mongoose
+- Socket.IO
+- Clerk
+- ImageKit
 
 ## Deployment
 
-* Docker
-* Render
-* MongoDB Atlas
+- Docker
+- Render
+- MongoDB Atlas
+
+---
+
+# 🏗️ Architecture
+
+```text
+                React Frontend
+                      │
+                      │
+                  Axios API
+                      │
+                      ▼
+            Express + Node.js
+             │             │
+             │             │
+         Socket.IO      Clerk Auth
+             │             │
+             └──────┬──────┘
+                    │
+               MongoDB Atlas
+```
 
 ---
 
 # 📂 Project Structure
 
 ```text
-chat-app/
+chat-app
 │
-├── backend/
-│   ├── controllers/
-│   ├── routes/
-│   ├── middleware/
-│   ├── models/
-│   ├── lib/
+├── backend
+│   ├── controllers
+│   ├── middleware
+│   ├── models
+│   ├── routes
+│   ├── lib
 │   └── server.js
 │
-├── frontend/
-│   ├── src/
-│   ├── public/
+├── frontend
+│   ├── src
+│   ├── public
 │   └── vite.config.js
 │
+├── screenshots
 ├── Dockerfile
 ├── README.md
 └── package.json
@@ -102,119 +162,106 @@ chat-app/
 
 ---
 
-# ⚙️ Environment Variables
-
-## Backend (.env)
-
-```env
-PORT=3000
-NODE_ENV=development
-
-MONGO_URI=your_mongodb_uri
-
-CLERK_PUBLISHABLE_KEY=your_key
-CLERK_SECRET_KEY=your_key
-CLERK_WEBHOOK_SIGNING_SECRET=your_secret
-
-IMAGEKIT_PUBLIC_KEY=your_key
-IMAGEKIT_PRIVATE_KEY=your_key
-IMAGEKIT_URL_ENDPOINT=your_url
-
-FRONTEND_URL=http://localhost:5173
-```
-
-## Frontend (.env)
-
-```env
-VITE_CLERK_PUBLISHABLE_KEY=your_key
-VITE_API_URL=http://localhost:3000
-```
-
----
-
-# 🚀 Installation
-
-Clone the repository
+# ⚙️ Installation
 
 ```bash
-git clone[ https://github.com/yourusername/chat-app.git](https://github.com/ayushshukla-01/imessage)
-```
+git clone [https://github.com/yourusername/chat-app.git](https://github.com/ayushshukla-01/imessage)
 
-Navigate into the project
-
-```bash
 cd chat-app
-```
 
-Install dependencies
-
-```bash
 npm install
 ```
 
-Run the backend
+Run Backend
 
 ```bash
 npm run dev
 ```
 
-Run the frontend
+Run Frontend
 
 ```bash
 cd frontend
+
 npm run dev
 ```
 
 ---
 
+# 🔑 Environment Variables
 
+Backend
 
-# 🌟 Highlights
+```env
+PORT=
 
-* Real-Time Chat Application
-* Secure User Authentication
-* Production Ready Backend
-* Responsive Modern UI
-* Media Sharing
-* Theme Customization
-* Socket.IO Integration
-* Docker Deployment
-* MongoDB Atlas Integration
-* Clerk Authentication
-* ImageKit Media Optimization
+NODE_ENV=
+
+MONGO_URI=
+
+FRONTEND_URL=
+
+CLERK_PUBLISHABLE_KEY=
+
+CLERK_SECRET_KEY=
+
+CLERK_WEBHOOK_SIGNING_SECRET=
+
+IMAGEKIT_PUBLIC_KEY=
+
+IMAGEKIT_PRIVATE_KEY=
+
+IMAGEKIT_URL_ENDPOINT=
+```
+
+Frontend
+
+```env
+VITE_CLERK_PUBLISHABLE_KEY=
+```
+
+---
+
+# 🐳 Docker
+
+```bash
+docker build -t realtime-chat .
+
+docker run -p 3000:3000 realtime-chat
+```
 
 ---
 
 # 🚀 Future Enhancements
 
-* ✅ Message Read Receipts (✓ Seen)
-* ✅ Typing Indicator
-* ✅ Group Chat
-* ✅ Voice Messages
-* ✅ Emoji Picker
-* ✅ Reply to Messages
-* ✅ Edit Messages
-* ✅ Delete Messages
-* ✅ Message Reactions
-* ✅ Message Search
-* ✅ Pinned Conversations
-* ✅ Push Notifications
-* ✅ End-to-End Encryption
-* ✅ Video Calling
-* ✅ Audio Calling
-* ✅ User Blocking
-* ✅ Friend/Contact System
-* ✅ Recent Chats Only Sidebar
-* ✅ File Sharing (PDF, DOCX, ZIP)
-* ✅ Drag & Drop Uploads
-* ✅ Message Forwarding
-* ✅ AI Chat Assistant Integration
+- ✅ Message Seen Status (✓✓ Seen)
+- ✅ Typing Indicator
+- ✅ Emoji Picker
+- ✅ Group Chat
+- ✅ Voice Messages
+- ✅ Video Calling
+- ✅ Audio Calling
+- ✅ Edit Messages
+- ✅ Delete Messages
+- ✅ Reply to Messages
+- ✅ Message Reactions
+- ✅ Search Messages
+- ✅ Friend / Contact System
+- ✅ Pinned Chats
+- ✅ Message Forwarding
+- ✅ Push Notifications
+- ✅ End-to-End Encryption
+- ✅ AI Chat Assistant
+- ✅ File Sharing (PDF, DOCX, ZIP)
+- ✅ Drag & Drop Upload
+- ✅ User Blocking
+- ✅ Chat Backup & Restore
 
 ---
 
 # 🤝 Contributing
 
-Contributions, issues, and feature requests are welcome.
+Contributions are welcome.
 
 Feel free to fork this repository and submit a pull request.
 
@@ -222,7 +269,7 @@ Feel free to fork this repository and submit a pull request.
 
 # 📄 License
 
-This project is licensed under the MIT License.
+MIT License
 
 ---
 
@@ -230,8 +277,13 @@ This project is licensed under the MIT License.
 
 **Ayush Shukla**
 
+💼 LinkedIn:
+www.linkedin.com/in/ayush-shukla-b394a3201
+
 
 
 ---
 
-⭐ If you found this project useful, consider giving it a star.
+## ⭐ Support
+
+If you like this project, consider giving it a ⭐ on GitHub.
