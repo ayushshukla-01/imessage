@@ -23,17 +23,7 @@ Supports real-time messaging, media sharing, authentication, customizable themes
 
 ---
 
-# 🎥 Demo
 
-> Add a GIF here showing:
->
-> Login → Select User → Send Message → Receive Message → Change Theme
-
-Example:
-
-```md
-![Demo](screenshots/demo.gif)
-```
 
 ---
 
@@ -165,7 +155,7 @@ chat-app
 # ⚙️ Installation
 
 ```bash
-git clone [https://github.com/yourusername/chat-app.git](https://github.com/ayushshukla-01/imessage)
+git clone (https://github.com/ayushshukla-01/imessage)
 
 cd chat-app
 
